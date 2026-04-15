@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Prata&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="Берік ж/е Айгерім үйлену тойы" />
+    <meta property="og:description" content="Берік ж/е Айгерім үйлену тойына шақырту! 28 маусым сағат 17:00 Теміртау қаласы  Бауыржан Момышұлы даңғылы 44 Айзере мейрамханасы  " />
+    <meta property="og:image" content="https://sultanbekovaaigerim.github.io/shaqyrtu/images/123.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://sultanbekovaaigerim.github.io/shaqyrtu/" />
+    <meta property="og:type" content="website" />
+
+
+
+    <title>Берік ж/е Айгерім үйлену тойы</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+
+            <div class="header-line">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="350" viewBox="0 0 390 244" fill="none">
+                    <path class="animated-path" d="M0.339775 204.411C0.339775 204.411 138.794 333.874 121.34 118.411C103.886 -97.0528 331.521 30.4291 389.34 126.411" stroke="black"/>
+                </svg>
+            </div>
+
+            <div class="header-images-corusel">
+                <img src="./image/header_image_!.jpg" alt="Image 1" class="header-image-corusel active">
+                <img src="./image/header_image_2.jpg" alt="Image 2" class="header-image-corusel">
+            </div>
+        </header>
+        <section class="main">
+            <div class="header-text">
+                <div class="header_berik">Берік</div>
+                <div class="header_and">&</div>
+                <div class="header_aygirim">Айгерім</div>
+            </div>
+
+        </section>
+
+         <!-- ═══════════════════════════════════════
+     COUNTDOWN SECTION — обратный отсчёт
+     ═══════════════════════════════════════ -->
+    <section class="countdown-section">
+        <div class="countdown-title">Тойға дейін қалды</div>
+        <div class="countdown-divider">
+            <span class="countdown-line"></span>
+            <span class="countdown-heart"></span>
+            <span class="countdown-line"></span>
+        </div>
+        <div class="countdown-blocks">
+            <div class="countdown-block">
+                <div class="countdown-ring-wrap">
+                    <div class="countdown-ring-bg"></div>
+                    <div class="countdown-ring-fill" id="ring-d"></div>
+                    <span class="countdown-num" id="days">--</span>
+                </div>
+                <span class="countdown-label">Күн</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-block">
+                <div class="countdown-ring-wrap">
+                    <div class="countdown-ring-bg"></div>
+                    <div class="countdown-ring-fill" id="ring-h"></div>
+                    <span class="countdown-num" id="hours">--</span>
+                </div>
+                <span class="countdown-label">Сағат</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-block">
+                <div class="countdown-ring-wrap">
+                    <div class="countdown-ring-bg"></div>
+                    <div class="countdown-ring-fill" id="ring-m"></div>
+                    <span class="countdown-num" id="minutes">--</span>
+                </div>
+                <span class="countdown-label">Минут</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-block">
+                <div class="countdown-ring-wrap">
+                    <div class="countdown-ring-bg"></div>
+                    <div class="countdown-ring-fill" id="ring-s"></div>
+                    <span class="countdown-num" id="seconds">--</span>
+                </div>
+                <span class="countdown-label">Секунд</span>
+            </div>
+        </div>
+    </section>
+
+        <section class="main_content">
+            <div class="main_content__qurmetti">
+                <div class="main_content__qurmetti_title">Құрметті</div>
+                <!--
+                    JS replaces "Қонақтар!" with the guest's name.
+                    Priority:
+                      1. ?name=Айдар  (URL query param)
+                      2. API lookup by telegram_id  (?tg=123456)
+                      3. Fallback → "Қонақтар!"
+                -->
+                <div class="main_content__qurmetti_username" id="guest-name">Қонақтар!</div>
+            </div>
+            <div class="main_content__qurmetti_message">
+                <div class="main_content__qurmetti_message__text">Сіздерді ұлымыз</div>
+                <div class="main_content__qurmetti_message__username">Берік</div>
+                <div class="main_content__qurmetti_message__text">пен келініміз</div>
+                <div class="main_content__qurmetti_message__username">Айгерім</div>
+                <div class="main_content__qurmetti_message__text">үйлену тойына арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!</div>
+            </div>
+            
+            <div class="main_content__qurmetti_line">
+                <svg class="main_content__qurmetti_line__animated-svg" viewBox="0 0 216 414" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="main_content__qurmetti_line__path" d="M12.5 132.5C28.1667 87.8333 73.1 1.1 130.5 13C187.9 24.9 220 102 201 190C182 278 116 350.5 59.5 401" />
+                </svg>
+            </div>
+        </section>
+
+        <section class="wedding-calendar-section">
+            <div class="wedding-calendar">
+            <div class="calendar-month">Той салтанаты: </div>
+            <div class="calendar-date">28 Маусым 2026ж</div>
+            
+            <div class="calendar-grid">
+                <div class="weekday">Дс</div>
+                <div class="weekday">Сс</div>
+                <div class="weekday">Ср</div>
+                <div class="weekday">Бс</div>
+                <div class="weekday">Жм</div>
+                <div class="weekday">Сн</div>
+                <div class="weekday">Жс</div>
+
+                <div class="day-box">1</div>
+                <div class="day-box">2</div>
+                <div class="day-box">3</div>
+                <div class="day-box">4</div>
+                <div class="day-box">5</div>
+                <div class="day-box">6</div>
+                <div class="day-box">7</div>
+                <div class="day-box">8</div>
+                <div class="day-box">9</div>
+                <div class="day-box">10</div>
+                <div class="day-box">11</div>
+                <div class="day-box">12</div>
+                <div class="day-box">13</div>
+                <div class="day-box">14</div>
+                <div class="day-box">15</div>
+                <div class="day-box">16</div>
+                <div class="day-box">17</div>
+                <div class="day-box">18</div>
+                <div class="day-box">19</div>
+                <div class="day-box">20</div>
+                <div class="day-box">21</div>
+                <div class="day-box">22</div>
+                <div class="day-box">23</div>
+                <div class="day-box">24</div>
+                <div class="day-box">25</div>
+                <div class="day-box">26</div>
+                <div class="day-box">27</div>
+                <div class="day-heart-container">
+                    <div class="day-heart">
+                        <span>28</span>
+                    </div>
+                </div>
+                <div class="day-box">29</div>
+                <div class="day-box">30</div>
+            </div>
+        </div>
+        </section>
+
+       
+
+        <section class="restoran-section">
+            <div class="calendar-month">Мекен жайымыз: </div>
+            <div class="restoran-section-image">
+                <div class="restoran-section__content">
+                    <div>Теміртау қаласы Бауыржан Момышұлы даңғылы 44</div>
+                    <div>"Айзере"<br> мейрамханасы</div>
+                    <div>сағат 17:00</div>
+                </div>
+            </div>
+            <div class="restoran-section-map">
+                <a href="https://2gis.kz/karaganda/firm/70000001097606904/72.977567%2C50.056205?m=72.97813%2C50.056231%2F18.84">Картадаң көрініздер!</a>
+            </div>
+        </section>
+        <!-- ═══════════════════════════════════════
+     ТОЙ ИЕЛЕРІ
+     ═══════════════════════════════════════ -->
+
+     <section class="toy-ieleri">
+        <div class="v-tag">
+            <div class="v1-ornament">~ Той иелері ~</div>
+            <div class="v1-line"></div>
+        </div>
+        
+        <div class="v1-names">
+            <div class="v1-name">Сайранбек</div>
+            <div class="v1-amp">&</div>
+            <div class="v1-name">Мейрамкүл</div>
+        </div>
+
+        <div class="toy-ieleri_q">
+            Келіңіздер, қуанышымыздың қадірлі қонағы болыныздар!
+        </div>
+     </section>
+
+        <!-- ═══════════════════════════════════════
+     MUSIC PLAYER — плавающая кнопка
+     ═══════════════════════════════════════ -->
+<div class="music-player" id="music-player">
+    <div class="music-player__rings">
+        <div class="music-player__ring music-player__ring--1"></div>
+        <div class="music-player__ring music-player__ring--2"></div>
+    </div>
+
+    <svg class="music-player__icon" id="music-icon-play" viewBox="0 0 24 24" fill="none">
+        <path d="M8 5.5v13l11-6.5L8 5.5z" fill="#612415"/>
+    </svg>
+    <svg class="music-player__icon" id="music-icon-pause" viewBox="0 0 24 24" fill="none" style="display:none">
+        <rect x="6" y="5" width="4" height="14" rx="1.5" fill="#612415"/>
+        <rect x="14" y="5" width="4" height="14" rx="1.5" fill="#612415"/>
+    </svg>
+
+    <div class="music-player__bars" id="music-bars">
+        <span class="music-player__bar"></span>
+        <span class="music-player__bar"></span>
+        <span class="music-player__bar"></span>
+        <span class="music-player__bar"></span>
+        <span class="music-player__bar"></span>
+    </div>
+</div>
+
+<!-- замените src на путь к вашему MP3 файлу -->
+<audio id="bg-audio" loop>
+    <source src="./music/1720715285_algyt-a-kjlek.mp3" type="audio/mpeg">
+</audio>
+        
+    </div>
+</body>
+
+<script>
+    // ═══════════════════════════════════════════════════════
+    // GUEST NAME — replace "Қонақтар!" with actual name
+    //
+    //  How to send personalised links from the bot:
+    //    https://your-site.com/?name=Айдар
+    //    https://your-site.com/?name=Айдар&tg=123456   (also passes telegram_id)
+    //
+    //  Priority:
+    //    1. ?name=   URL param  →  use directly (fastest, no API call needed)
+    //    2. ?tg=     URL param  →  fetch name from API by telegram_id
+    //    3. No params           →  keep default "Қонақтар!"
+    // ═══════════════════════════════════════════════════════
+
+    const API_BASE = "http://localhost:8000";   // ← change to your server URL in production
+
+    async function resolveGuestName() {
+        const params = new URLSearchParams(window.location.search);
+        const nameEl = document.getElementById("guest-name");
+
+        // ── 1. Direct name in URL ─────────────────────────
+        const nameParam = params.get("name");
+        if (nameParam) {
+            nameEl.textContent = decodeURIComponent(nameParam) + "!";
+            return;
+        }
+
+        // ── 2. Lookup by telegram_id via API ──────────────
+        const tgId = params.get("tg");
+        if (tgId) {
+            try {
+                const res  = await fetch(`${API_BASE}/guests?tg_id=${encodeURIComponent(tgId)}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    // Find the guest matching this telegram_id
+                    const guest = data.guests.find(g => String(g.telegram_id) === String(tgId));
+                    if (guest && guest.name) {
+                        nameEl.textContent = guest.name + "!";
+                        return;
+                    }
+                }
+            } catch (err) {
+                console.warn("API қолжетімді емес, default мән пайдаланылады.", err);
+            }
+        }
+
+        // ── 3. Fallback ───────────────────────────────────
+        nameEl.textContent = "Қонақтар!";
+    }
+
+    resolveGuestName();
+
+
+    // ═══════════════════════════════════════════════════════
+    // Observer 1: SVG line — qurmetti section
+    // ═══════════════════════════════════════════════════════
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-active');
+            } else {
+                entry.target.classList.remove('is-active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const path = document.querySelector('.main_content__qurmetti_line__path');
+    observer.observe(path);
+
+    // ═══════════════════════════════════════════════════════
+    // Observer 2: Fade-in text — qurmetti message
+    // ═══════════════════════════════════════════════════════
+    const observer2 = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('element-show');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.main_content__qurmetti, .main_content__qurmetti_message')
+            .forEach((el) => observer2.observe(el));
+
+    // ═══════════════════════════════════════════════════════
+    // Observer 3: Restoran section slide-in
+    // ═══════════════════════════════════════════════════════
+    const restoranObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                restoranObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    const restoranSection = document.querySelector('.restoran-section');
+    restoranSection && restoranObserver.observe(restoranSection);
+
+
+    // ═══════════════════════════════════════════════════════
+// Countdown — обратный отсчёт до 28 июня 2026, 18:00
+// ═══════════════════════════════════════════════════════
+
+function setRing(id, val, max) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const deg = 360 * (val / max);
+    el.style.transform = `rotate(${deg - 45}deg)`;
+}
+
+function tickCountdown() {
+    const wedding = new Date('2026-06-28T18:00:00');
+    const now = new Date();
+    const diff = wedding - now;
+    if (diff <= 0) {
+        ['days','hours','minutes','seconds'].forEach(id => {
+            document.getElementById(id).textContent = '00';
+        });
+        return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+
+    document.getElementById('days').textContent    = String(d).padStart(2, '0');
+    document.getElementById('hours').textContent   = String(h).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(m).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+
+    setRing('ring-d', d % 365, 365);
+    setRing('ring-h', h, 24);
+    setRing('ring-m', m, 60);
+    setRing('ring-s', s, 60);
+}
+
+    tickCountdown();
+    setInterval(tickCountdown, 1000);
+
+    // IntersectionObserver для анимации появления
+    const countdownObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                countdownObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    const countdownSection = document.querySelector('.countdown-section');
+    countdownSection && countdownObserver.observe(countdownSection);
+
+    // ═══════════════════════════════════════════════════════
+// Music player
+// ═══════════════════════════════════════════════════════
+(function () {
+    const player = document.getElementById('music-player');
+    const audio  = document.getElementById('bg-audio');
+    if (!player || !audio) return;
+
+    let isPlaying = false;
+
+    player.addEventListener('click', function () {
+        isPlaying ? pause() : play();
+    });
+
+    function play() {
+        audio.play().then(() => {
+            isPlaying = true;
+            player.classList.add('is-playing');
+            document.getElementById('music-icon-play').style.display  = 'none';
+            document.getElementById('music-icon-pause').style.display = 'block';
+        }).catch(() => {});
+    }
+
+    function pause() {
+        audio.pause();
+        isPlaying = false;
+        player.classList.remove('is-playing');
+        document.getElementById('music-icon-play').style.display  = 'block';
+        document.getElementById('music-icon-pause').style.display = 'none';
+    }
+})();
+
+const GUESTS_LIST = {
+        // Класстастар
+            "1": "Бағдаулет және Сәттігүл",
+            "2": "Алишер және Лаура",
+            "3" : "Алмас",
+            "4" : "Асылжан",
+            "5" : "Асыл",
+            "6" : "Азамат",
+            "7" : "Нұрқасым",
+            "8" : "Талғат",
+            
+            "9" : "Нұрсұлтан және Ұлжан",
+            "10" : "Жаңылай",
+            "11" : "Мунира",
+            "12" : "Талат және Меруерт",
+            "13" : "Ахмет",
+        // Үйдегілер
+            "14" : "Манас және Ақтоты",
+            "15" : "Нұрдос және Улжан",
+
+        // Жұмыс        
+        // Келіннің колегалары
+
+       
+};
+
+async function updateGuestName() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const guestId = urlParams.get('id');
+    const guestElement = document.getElementById('guest-name');
+
+    if (guestId && GUESTS_LIST[guestId]) {
+        guestElement.textContent = GUESTS_LIST[guestId];
+    }
+}
+
+updateGuestName();
+
+
+
+</script>
+</html>

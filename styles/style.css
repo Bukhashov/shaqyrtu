@@ -1,0 +1,875 @@
+/* =============================================
+   CSS-ПЕРЕМЕННЫЕ
+   ============================================= */
+:root {
+   --line-color: #612415;
+   --line-width: 2px;
+   --animation-duration: 3s;
+   --carousel-speed: 1.5s;
+
+    --gap: 20px;
+    --transition-speed: 0.6s;
+
+    --text-color: #612415;
+
+    --bg-color: #1a1a1a;
+
+    --line-length: 1000; 
+
+    --anim-duration: 2.5s;
+    --anim-timing: ease-in-out;
+            
+    --svg-size: 220px;
+}
+
+
+/* =============================================
+   СБРОС И БАЗОВЫЕ СТИЛИ
+   ============================================= */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.container{
+    max-width: 480px;
+    width: 450px;
+    margin: auto;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.header {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.header-line {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+.animated-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw var(--animation-duration) ease-in-out forwards;
+    stroke: var(--line-color);
+    stroke-width: var(--line-width);
+    fill: none;
+    stroke-linecap: round;
+}
+
+@keyframes draw {
+    to { stroke-dashoffset: 0; }
+}
+
+.header-images-corusel {
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header-image-corusel {
+    width: 200px;
+    height: 250px;
+    margin: 0 10px;
+    border-radius: 8px;
+    object-fit: cover;
+    opacity: 0.99;
+}
+
+
+/* header-text */
+.header-text {
+    display: grid;
+    justify-self: start;
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    animation: fadeInUp 1.8s ease-out forwards;
+}
+.header_berik {
+    font-size: 48px;
+    font-family: "Marck Script", cursive;
+    text-align: center;
+    padding-right: 120px;
+    color: var(--text-color)
+}
+.header_and {
+    display: flex;
+    font-size: 28px;
+    font-family: "Marck Script", cursive;
+    text-align: center;
+    color: var(--text-color);
+    justify-content: center;
+    animation: heartbeat 1.5s infinite;
+}
+
+.header_aygirim {
+    font-size: 48px;
+    font-family: "Marck Script", cursive;
+    text-align: center;
+    padding-left: 120px;
+    color: var(--text-color)
+}
+.main__data {
+    margin: 8px 0;
+    display: flex;
+    justify-content: center;
+}
+.main__data > div {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    color: #000000;
+}
+
+.main_content {
+    display: grid;
+}
+.main_content__qurmetti {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display: grid;
+    justify-content: center;
+    font-family: "Prata", serif;
+    font-size: 28px;
+    color: #612415;
+    font-weight: 400;
+    animation: blurFade 1.5s ease-out forwards;
+}
+.main_content__qurmetti_title {
+    padding-top: 3px;
+    padding-bottom: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.main_content__qurmetti_username {
+    padding-top: 1px;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.main_content__qurmetti_message {
+    display: grid;
+    justify-content: center;
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(0.95);
+    transition: all 1.5s ease-out;
+}
+.element-show {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+}
+.main_content__qurmetti_message.element-show {
+    transition-delay: 0.8s;
+}
+
+.main_content__qurmetti_message__username {
+    display: inline-block;
+    font-family: "Marck Script", cursive;
+    font-size: 42px;
+    color: var(--text-color);
+    margin: 5px 5px;
+    text-align: center;
+}
+
+.main_content__qurmetti_message__text {
+    padding-right: 15px;
+    padding-left: 15px;
+    display: inline-block;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    color: #000000;
+    margin: 0 5px;
+    text-align: center;
+}
+
+.main_content__qurmetti_line{
+    position: absolute;
+    z-index: -1;
+    left: -66px;
+}
+
+.main_content__qurmetti_line__animated-svg {
+    width: var(--svg-size);
+    height: auto;
+    overflow: visible;
+}
+.main_content__qurmetti_line__path{
+    stroke: var(--line-color);
+    stroke-width: var(--line-width);
+    stroke-dasharray: var(--line-length);
+    stroke-dashoffset: var(--line-length);
+    stroke-linecap: round;
+    fill: none;
+    transition: stroke-dashoffset var(--anim-duration) var(--anim-timing);
+}
+
+.main_content__qurmetti_line__path.is-active {
+    stroke-dashoffset: 0;
+}
+
+/* wedding calendar section */
+.wedding-calendar-section {
+    display: grid; 
+    justify-content: center;
+    margin-top: 50px;
+}
+.wedding-calendar {
+    text-align: center;
+    font-family: "Marck Script", cursive;
+    color: var(--text-color);
+}
+.calendar-month {
+    font-size: 48px;
+    font-style: italic;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.calendar-days {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    gap: 18px;
+}
+
+.day-box {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #888;
+}
+
+.day-heart {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    background-color: #631018;
+    transform: rotate(-48deg);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.day-heart::before,
+.day-heart::after {
+    content: "";
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    background-color: #631018;
+    border-radius: 50%;
+}
+
+.day-heart::before {
+    top: -25px;
+    left: 0;
+}
+
+.day-heart::after {
+    top: 0;
+    right: -25px;
+}
+
+.day-heart span {
+    position: relative;
+    z-index: 1;
+    transform: rotate(45deg);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.wedding-calendar-line-curve {
+    width: 180px;
+    height: auto;
+    z-index: -1;
+}
+
+.wedding-calendar-line-curve-path {
+    fill: none;
+    stroke: #631018;
+    stroke-width: 2;
+    stroke-linecap: round;
+    animation: pulsate 2s infinite ease-in-out;
+}
+
+/* =============================================
+   RESTORAN SECTION — АНИМАЦИИ
+   ============================================= */
+
+.restoran-section {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    gap: 16px;
+
+    /* Начальное состояние — скрыто */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Когда попадает в viewport */
+.restoran-section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.restoran-section-image {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    background-image: url(../image/красный.png);
+    border-radius: 32px;
+
+    /* Zoom-in при появлении */
+    transform: scale(0.92);
+    transition: transform 0.9s ease-out 0.2s;
+}
+
+.restoran-section.in-view .restoran-section-image {
+    transform: scale(1);
+}
+
+/* Текст внутри карточки */
+.restoran-section__content {
+    padding: 8px 16px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    gap: 8px;
+}
+
+.restoran-section__content > div {
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    text-wrap: wrap;
+
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Каждый div появляется с задержкой */
+.restoran-section.in-view .restoran-section__content > div:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+.restoran-section.in-view .restoran-section__content > div:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.75s;
+}
+.restoran-section.in-view .restoran-section__content > div:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1s;
+}
+
+/* Кнопка карты */
+.restoran-section-map {
+    width: 350px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    border-color: #631018;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 15px;
+
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease-out 1.2s, transform 0.6s ease-out 1.2s,
+                background-color 0.3s ease;
+    animation: none;
+}
+
+.restoran-section.in-view .restoran-section-map {
+    opacity: 1;
+    transform: translateY(0);
+    animation: mapPulse 2s ease-in-out 1.8s infinite;
+}
+
+.restoran-section-map > a {
+    padding: 4px 8px;
+    color: #631018;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.restoran-section-map:hover {
+    background-color: #631018;
+    animation: none;
+}
+
+.restoran-section-map:hover > a {
+    color: #ffffff;
+}
+
+@keyframes mapPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(99, 16, 24, 0.4); }
+    50%  { box-shadow: 0 0 0 8px rgba(99, 16, 24, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(99, 16, 24, 0); }
+}
+
+/* =============================================
+   ОБЩИЕ АНИМАЦИИ
+   ============================================= */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.3); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.15); }
+    60% { transform: scale(1); }
+}
+
+.line-path {
+    filter: drop-shadow(0 0 5px var(--line-color));
+}
+
+@keyframes blurFade {
+    from {
+        filter: blur(10px);
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        filter: blur(0);
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Контейнер сетки */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.weekday {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.day-box {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #444;
+}
+
+.day-heart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+}
+
+.day-heart {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background-color: #631018;
+    transform: rotate(-45deg);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.day-heart::before,
+.day-heart::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #631018;
+    border-radius: 50%;
+}
+
+.day-heart::before { top: -14px; left: 0; }
+.day-heart::after { top: 0; right: -14px; }
+
+.day-heart span {
+    position: relative;
+    z-index: 1;
+    transform: rotate(45deg);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.calendar-date {
+    padding-top: 3px;
+    padding-bottom: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 24px;
+    color: var(--text-color);
+    font-family: "Prata", serif;
+}
+
+/* =============================================
+   COUNTDOWN SECTION
+   ============================================= */
+
+.countdown-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    gap: 20px;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+.countdown-section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.countdown-title {
+    font-family: "Prata", serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.countdown-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.countdown-line {
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--text-color);
+}
+
+.countdown-heart {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: var(--text-color);
+    transform: rotate(-45deg);
+    border-radius: 1px;
+    animation: heartbeat 1.5s infinite;
+}
+.countdown-heart::before,
+.countdown-heart::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+.countdown-heart::before { top: -10px; left: 0; }
+.countdown-heart::after { top: 0; right: -10px; }
+
+.countdown-blocks {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    justify-content: center;
+}
+
+.countdown-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.countdown-ring-wrap {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown-ring-bg {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid #e8c8b8;
+}
+
+.countdown-ring-fill {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid var(--text-color);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(-45deg);
+    transition: transform 0.8s ease-in-out;
+}
+
+.countdown-num {
+    font-family: "Prata", serif;
+    font-size: 24px;
+    color: var(--text-color);
+    z-index: 1;
+}
+
+.countdown-label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.countdown-sep {
+    font-family: "Marck Script", cursive;
+    font-size: 28px;
+    color: var(--text-color);
+    margin-bottom: 26px;
+    opacity: 0.6;
+}
+
+/* =============================================
+   MUSIC PLAYER — плавающая кнопка
+   ============================================= */
+
+.music-player {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 100;
+
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid #612415;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(6px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    opacity: 0;
+    transform: scale(0.8);
+    animation: musicAppear 0.8s ease-out 1.5s forwards;
+    transition: background 0.3s;
+}
+
+.music-player:hover {
+    background: rgba(97, 36, 21, 0.08);
+}
+
+@keyframes musicAppear {
+    to { opacity: 1; transform: scale(1); }
+}
+
+.music-player__icon {
+    width: 22px;
+    height: 22px;
+    pointer-events: none;
+}
+
+/* Пульсирующие кольца */
+.music-player__rings {
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.music-player__ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid rgba(97, 36, 21, 0.3);
+    opacity: 0;
+}
+
+.music-player__ring--1 { inset: -10px; }
+.music-player__ring--2 { inset: -20px; }
+
+.music-player.is-playing .music-player__ring--1 {
+    animation: mpRipple 2s ease-out infinite;
+}
+.music-player.is-playing .music-player__ring--2 {
+    animation: mpRipple 2s ease-out 0.5s infinite;
+}
+
+@keyframes mpRipple {
+    0%   { opacity: 0.6; transform: scale(0.96); }
+    100% { opacity: 0;   transform: scale(1.2); }
+}
+
+/* Полоски эквалайзера */
+.music-player__bars {
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2px;
+    align-items: flex-end;
+    height: 14px;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.music-player.is-playing .music-player__bars {
+    opacity: 1;
+}
+
+.music-player__bar {
+    display: block;
+    width: 3px;
+    height: 4px;
+    background: #612415;
+    border-radius: 2px;
+    transform-origin: bottom;
+}
+
+.music-player.is-playing .music-player__bar:nth-child(1) { animation: mpBar1 0.8s ease-in-out infinite; }
+.music-player.is-playing .music-player__bar:nth-child(2) { animation: mpBar2 0.9s ease-in-out infinite 0.1s; }
+.music-player.is-playing .music-player__bar:nth-child(3) { animation: mpBar3 0.7s ease-in-out infinite 0.2s; }
+.music-player.is-playing .music-player__bar:nth-child(4) { animation: mpBar2 1.0s ease-in-out infinite 0.05s; }
+.music-player.is-playing .music-player__bar:nth-child(5) { animation: mpBar1 0.85s ease-in-out infinite 0.15s; }
+
+@keyframes mpBar1 { 0%,100%{ height:3px } 50%{ height:12px } }
+@keyframes mpBar2 { 0%,100%{ height:6px } 50%{ height:11px } }
+@keyframes mpBar3 { 0%,100%{ height:10px } 50%{ height:3px } }
+
+
+.restoran-section > .calendar-month {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+}
+
+.v-tag {
+    padding: 15px;
+    display: grid;
+    justify-content: center;
+    
+}
+
+.v1-ornament { 
+    font-family: 'Marck Script', cursive; 
+    font-size: 32px; 
+    color: #612415; 
+    text-align: center;
+    margin-top: 20px;   
+}
+
+.v1-line { 
+    width: 220px; 
+    height: 1px; 
+    background: #e8c8b8; 
+}
+
+.v1-names { 
+    padding: 15px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    gap: 14px; 
+}
+
+.v1-name { 
+    font-family: 'Marck Script', cursive; 
+    font-size: 36px; 
+    color: #612415; 
+}
+
+.v1-amp { 
+    font-family: 'Marck Script', cursive; 
+    font-size: 22px; 
+    color: #612415; 
+    opacity: 0.45; 
+}
+
+.toy-ieleri_q {
+    font-family: "Prata", serif;
+    font-size: 38px;
+    margin-top: 32px;
+    margin-bottom: 120px;
+    color: #612415;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
