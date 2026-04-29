@@ -163,6 +163,7 @@ body {
 .main_content__qurmetti_username {
     padding-top: 1px;
     padding-bottom: 3px;
+    margin-top: 5px;
     text-transform: uppercase;
     text-align: center;
 }
